@@ -18,6 +18,7 @@ def test_post_list_view_expanded(rf):
     response = callable_obj(request)
     assertContains(response, "Posts")
 
+
 def test_post_list_view(rf):
     url = reverse("posts:list")
     request = rf.get(url)
