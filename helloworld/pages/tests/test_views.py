@@ -1,9 +1,10 @@
 import pytest
 from pytest_django.asserts import assertContains
 
+# from django.test import RequestFactory
 from django.urls import reverse
 
-from .views import HomePageView, AboutPageView
+from ..views import HomePageView, AboutPageView
 
 pytestmark = pytest.mark.django_db
 
