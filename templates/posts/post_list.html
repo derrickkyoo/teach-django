@@ -7,8 +7,9 @@
 
   <ul>
     {% for post in post_list %}
-      <li>{{ post.text }}</li>
+      <li>
+        <a href="#">{{ post.title }}</a> - {{ post.text }} by {{ post.author.username }}
+      </li>
     {% endfor %}
   <ul>
-
 {% endblock content %}
