@@ -36,7 +36,12 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+
+    # Third party
     "whitenoise.runserver_nostatic",
+    "crispy_forms",
+
+    # Local
     "django.contrib.staticfiles",
     "helloworld.pages.apps.PagesConfig",
     "helloworld.posts.apps.PostsConfig",
@@ -131,3 +136,5 @@ AUTH_USER_MODEL = "users.CustomUser"
 
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
+
+CRISPY_TEMPLATE_PACK='bootstrap4'
