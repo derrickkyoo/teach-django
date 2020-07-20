@@ -10,3 +10,4 @@ pylint-django==2.0.15
 pytest==5.4.2
 pytest-django==3.9.0
 pytest-sugar==0.9.3
+whitenoise==5.1.0
