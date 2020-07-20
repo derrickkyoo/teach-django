@@ -25,7 +25,7 @@ SECRET_KEY = "***SET_DJANGO_SECRET_KEY!!!***"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
 
 
 # Application definition
@@ -36,11 +36,9 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-
     # Third party
     "whitenoise.runserver_nostatic",
     "crispy_forms",
-
     # Local
     "django.contrib.staticfiles",
     "helloworld.pages.apps.PagesConfig",
@@ -137,4 +135,6 @@ AUTH_USER_MODEL = "users.CustomUser"
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
 
-CRISPY_TEMPLATE_PACK='bootstrap4'
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
