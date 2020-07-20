@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "helloworld.pages.apps.PagesConfig",
     "helloworld.posts.apps.PostsConfig",
     "helloworld.accounts.apps.AccountsConfig",
+    "helloworld.users.apps.UsersConfig",
 ]
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -124,6 +125,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR), "static"]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+# https://docs.djangoproject.com/en/dev/ref/settings/#auth-user-model
+AUTH_USER_MODEL = "users.CustomUser"
 
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
