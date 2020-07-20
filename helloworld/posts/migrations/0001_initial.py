@@ -26,7 +26,10 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("title", models.CharField(max_length=200, verbose_name="Title"),),
+                (
+                    "title",
+                    models.CharField(max_length=200, verbose_name="Title"),
+                ),
                 ("text", models.TextField(blank=True, verbose_name="Text")),
                 (
                     "author",
