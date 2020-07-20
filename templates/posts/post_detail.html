@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-sm flex p-6 bg-white rounded-lg shadow-xl">
+
+  <h1 class="text-xl">{{ post.title }}</p>
+
+  <p class="text-base">
+    {{ post.text|linebreaksbr }}
+  </p>
+
+  <p class="text-base text-grey-600">
+    By: {{ post.author }}
+  </p>
+</div>
+{% endblock content %}

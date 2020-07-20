@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Post List</h1>
+  <h1 class="text-xl">Post List</h1>
 
-  {{ view.title }}
-
-  <ul>
+  <div>
     {% for post in post_list %}
-      <li>
-        <a href="#">{{ post.title }}</a> - {{ post.text }} by {{ post.author.username }}
-      </li>
+      <p class="text-base">
+        <a href="{% url "posts:detail" post.pk %}" class="text-blue-500">
+          {{ post.title }}
+        </a> - {{ post.text }} by {{ post.author.username }}
+      </p>
     {% endfor %}
-  <ul>
+  </div>
 {% endblock content %}
