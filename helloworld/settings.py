@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     # Third party
     "whitenoise.runserver_nostatic",
     "crispy_forms",
+    "django_extensions",
     # Local
     "django.contrib.staticfiles",
     "helloworld.pages.apps.PagesConfig",
