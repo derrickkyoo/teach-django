@@ -5,26 +5,29 @@
   <div>
     {% for post in post_list %}
       <div class="card mt-2 mb-4" style="width: 18rem;">
-        <div class="card-body">
+        <div class="card-header">
           <h5 class="card-title">{{ post.title }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">by {{ post.author.username}}</h6>
+        </div>
+        <div class="card-body">
           <p class="card-text">{{ post.text|linebreaksbr }}</p>
+          <h6 class="card-subtitle mb-2 text-muted">by {{ post.author.username}}</h6>
           <a href="{% url "posts:edit" post.id %}" class="card-link btn btn-outline-warning">Edit</a>
           <a href="{% url "posts:delete" post.id %}" class="card-link btn btn-outline-danger">Delete</a>
         </div>
-        <div class="card-footer">
-          {% for comment in post.comments.all %}
-            <p>
-              <span class="font-weight-bold">{{ comment.author }} - </span>
-              {{ comment }}
-            </p>          
-          {% endfor %}
-        </div>
+        {% if post.comments.count %}        
+          <div class="card-footer">
+            {% for comment in post.comments.all %}
+              <p>
+                <span class="font-weight-bold">{{ comment.author }} - </span>
+                {{ comment }}
+              </p>          
+            {% endfor %}
+          </div>
+        {% endif %}
       </div>
     {% endfor %}
   </div>
 
   <hr>
   <a href="{% url "posts:create" %}" class="btn btn-outline-primary">Create</a>
-
 {% endblock content %}
