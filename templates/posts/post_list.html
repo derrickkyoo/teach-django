@@ -12,6 +12,14 @@
           <a href="{% url "posts:edit" post.id %}" class="card-link btn btn-outline-warning">Edit</a>
           <a href="{% url "posts:delete" post.id %}" class="card-link btn btn-outline-danger">Delete</a>
         </div>
+        <div class="card-footer">
+          {% for comment in post.comments.all %}
+            <p>
+              <span class="font-weight-bold">{{ comment.author }} - </span>
+              {{ comment }}
+            </p>          
+          {% endfor %}
+        </div>
       </div>
     {% endfor %}
   </div>
